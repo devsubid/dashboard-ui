@@ -1,3 +1,4 @@
+import { toast } from "react-hot-toast";
 import Link from "next/link";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
@@ -29,7 +30,10 @@ const Form = () => {
               Sign in with Google
             </span>
           </div>
-          <div className="apple cursor-pointer flex gap-3 text-sm items-center bg-white px-5 py-2 rounded-xl">
+          <div
+            onClick={() => toast.error("Please try with Google")}
+            className="apple cursor-pointer flex gap-3 text-sm items-center bg-white px-5 py-2 rounded-xl"
+          >
             {
               // eslint-disable-next-line @next/next/no-img-element
               <img src="/icon/apple.svg" alt="google" className="w-5" />

@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { Lato, Montserrat, Open_Sans } from "next/font/google";
+import { Toaster } from "react-hot-toast";
 import Head from "next/head";
 
 const openSans = Open_Sans({
@@ -35,6 +36,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <title>Subid Das - Dashboard UI Test</title>
       </Head>
       <Component {...pageProps} />
+      <Toaster />
     </div>
   );
 }
