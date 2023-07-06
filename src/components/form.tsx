@@ -76,7 +76,9 @@ const Form = () => {
           </form>
           <div className="register text-center mt-4">
             Don&apos;t have an account?{" "}
-            <span className="text-link font-lato">Register here</span>
+            <Link href="" className="text-link font-lato">
+              Register here
+            </Link>
           </div>
         </div>
       </div>
