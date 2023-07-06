@@ -57,19 +57,23 @@ const Header = () => (
     <h2 className="font-montserrat text-2xl font-bold">Dashboard</h2>
     <div className="right flex items-center gap-6">
       <div className="input-box flex bg-white rounded-xl px-4 py-2">
-        <input className="bg-transparent" type="text" placeholder="Search..." />
+        <input
+          className="bg-transparent focus:outline-none"
+          type="text"
+          placeholder="Search..."
+        />
         {
           // eslint-disable-next-line @next/next/no-img-element
           <img className="w-4" src="/icon/search.svg" alt="" />
         }
       </div>
-      <div className="notification">
+      <div className="notification cursor-pointer">
         {
           // eslint-disable-next-line @next/next/no-img-element
           <img src="/icon/notification.svg" alt="" />
         }
       </div>
-      <div className="profile">
+      <div className="profile cursor-pointer">
         <Image
           className="rounded-full w-10"
           src={"/img/profile.jpg"}
