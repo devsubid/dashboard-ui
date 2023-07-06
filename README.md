@@ -53,3 +53,9 @@ npm run dev
 ```
 
 This will start the development server and you should be able to see the website by visiting http://localhost:5173 in your browser.
+
+## Setting up Environment Variables
+
+To set up environment variables, you will need to copy & rename the `.env.example` file to `.env.local`.
+
+Once you have created the file, you can open it in your favorite text editor and fill the credentials properly.
