@@ -31,7 +31,7 @@ const chartdata = [
 
 const LineChart = () => {
   return (
-    <Card className="shadow-none ring-tremor-ring-0">
+    <div className=" bg-white p-6 rounded-lg">
       <Title className="font-montserrat text-lg font-bold">Activities</Title>
       <Flex justifyContent="start" className="gap-2">
         <Text className="font-montserrat text-sm text-secondary">
@@ -54,7 +54,7 @@ const LineChart = () => {
         yAxisWidth={40}
         curveType="natural"
       />
-    </Card>
+    </div>
   );
 };
 
