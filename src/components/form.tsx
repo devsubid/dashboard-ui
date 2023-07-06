@@ -19,7 +19,7 @@ const Form = () => {
         <div className="signin grid grid-cols-2 gap-4">
           <div
             onClick={handleSignIn}
-            className="google flex gap-3 text-sm items-center bg-white px-5 py-2 rounded-xl"
+            className="google cursor-pointer flex gap-3 text-sm items-center bg-white px-5 py-2 rounded-xl"
           >
             {
               // eslint-disable-next-line @next/next/no-img-element
@@ -29,7 +29,7 @@ const Form = () => {
               Sign in with Google
             </span>
           </div>
-          <div className="apple flex gap-3 text-sm items-center bg-white px-5 py-2 rounded-xl">
+          <div className="apple cursor-pointer flex gap-3 text-sm items-center bg-white px-5 py-2 rounded-xl">
             {
               // eslint-disable-next-line @next/next/no-img-element
               <img src="/icon/apple.svg" alt="google" className="w-5" />
@@ -51,6 +51,7 @@ const Form = () => {
                 type="text"
                 id="email"
                 name="email"
+                placeholder="itsmesubid@gmail.com"
               />
             </div>
             <div className="input-group flex flex-col gap-2">

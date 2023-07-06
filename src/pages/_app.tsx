@@ -1,6 +1,7 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { Lato, Montserrat, Open_Sans } from "next/font/google";
+import Head from "next/head";
 
 const openSans = Open_Sans({
   weight: ["300", "400", "700"],
@@ -25,6 +26,14 @@ export default function App({ Component, pageProps }: AppProps) {
     <div
       className={`${lato.className} ${montserrat.variable} ${openSans.variable}`}
     >
+      <Head>
+        <link
+          rel="shortcut icon"
+          href="/icon/favicon.ico"
+          type="image/x-icon"
+        />
+        <title>Subid Das - Dashboard UI Test</title>
+      </Head>
       <Component {...pageProps} />
     </div>
   );
