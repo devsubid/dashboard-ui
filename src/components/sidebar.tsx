@@ -35,7 +35,10 @@ const Sidebar = () => {
         <h1 className="text-3xl font-bold">Board.</h1>
         <ul className="flex-1 flex flex-col">
           {tabs.map((tab) => (
-            <li className="flex items-center my-4 gap-4" key={tab.title}>
+            <li
+              className="flex items-center my-4 gap-4 cursor-pointer"
+              key={tab.title}
+            >
               {
                 // eslint-disable-next-line @next/next/no-img-element
                 <img src={tab.icon} alt={tab.title} className="w-5 h-5" />
@@ -50,10 +53,12 @@ const Sidebar = () => {
               </span>
             </li>
           ))}
-          <li className="mt-auto font-montserrat font-sm text-gray-400">
+          <li className="mt-auto font-montserrat font-sm text-gray-400 cursor-pointer">
             Help
           </li>
-          <li className="font-montserrat font-sm text-gray-400">Contact Us</li>
+          <li className="font-montserrat font-sm text-gray-400 cursor-pointer">
+            Contact Us
+          </li>
         </ul>
       </div>
     </div>
