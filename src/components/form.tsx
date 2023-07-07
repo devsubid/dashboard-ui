@@ -1,7 +1,6 @@
 import { toast } from "react-hot-toast";
 import Link from "next/link";
 import { signIn } from "next-auth/react";
-import { useRouter } from "next/navigation";
 
 const Form = () => {
   const handleSignIn = () => {
@@ -9,7 +8,6 @@ const Form = () => {
       callbackUrl: "/dashboard",
     });
   };
-  const router = useRouter();
   return (
     <div className="flex-1 bg-default h-full">
       <div className="container-custom-xs h-full flex flex-col gap-6 justify-center">
@@ -71,7 +69,7 @@ const Form = () => {
               Forgot password?
             </Link>
             <button
-              onClick={() => router.push("/dashboard")}
+              onClick={() => toast.error("Please try with Google")}
               className="text-white font-bold font-montserrat bg-black py-4 rounded-[0.625rem]"
               type="submit"
             >
