@@ -3,6 +3,7 @@ import type { AppProps } from "next/app";
 import { Lato, Montserrat, Open_Sans } from "next/font/google";
 import { Toaster } from "react-hot-toast";
 import Head from "next/head";
+import { SessionProvider } from "next-auth/react";
 
 const openSans = Open_Sans({
   weight: ["300", "400", "700"],
@@ -22,7 +23,10 @@ const lato = Lato({
   subsets: ["latin"],
 });
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({
+  Component,
+  pageProps: { session, ...pageProps },
+}: AppProps) {
   return (
     <div
       className={`${lato.className} ${montserrat.variable} ${openSans.variable}`}
@@ -35,7 +39,9 @@ export default function App({ Component, pageProps }: AppProps) {
         />
         <title>Subid Das - Dashboard UI Test</title>
       </Head>
-      <Component {...pageProps} />
+      <SessionProvider session={session}>
+        <Component {...pageProps} />
+      </SessionProvider>
       <Toaster />
     </div>
   );

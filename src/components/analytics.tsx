@@ -1,7 +1,7 @@
-import Image from "next/image";
 import LineChart from "./lineChart";
 import Product from "./product";
 import Schedule from "./schedule";
+import { useSession } from "next-auth/react";
 
 const analytics = [
   {
@@ -31,9 +31,10 @@ const analytics = [
 ];
 
 const Analytics = () => {
+  const { data: session } = useSession();
   return (
     <div className="flex-1 p-8 pl-0 flex flex-col gap-10">
-      <Header />
+      <Header img={session?.user?.image} />
       <div className="cards flex gap-10">
         {analytics.map((analytic) => (
           <Card key={analytic.title} analytics={analytic} />
@@ -52,7 +53,7 @@ const Analytics = () => {
 
 export default Analytics;
 
-const Header = () => (
+const Header = ({ img }: { img: string | null | undefined }) => (
   <header className="flex justify-between items-center">
     <h2 className="font-montserrat text-2xl font-bold">Dashboard</h2>
     <div className="right flex items-center gap-6">
@@ -74,13 +75,14 @@ const Header = () => (
         }
       </div>
       <div className="profile cursor-pointer">
-        <Image
-          className="rounded-full w-10"
-          src={"/img/profile.jpg"}
-          width={50}
-          height={50}
-          alt=""
-        />
+        {
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            className="rounded-full w-10"
+            src={img ? img : "/img/profile.jpg"}
+            alt=""
+          />
+        }
       </div>
     </div>
   </header>
