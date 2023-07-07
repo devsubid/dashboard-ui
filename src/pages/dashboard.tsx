@@ -1,5 +1,7 @@
 import Analytics from "@/components/analytics";
 import Sidebar from "@/components/sidebar";
+import { GetServerSideProps } from "next";
+import { getSession } from "next-auth/react";
 
 const dashboard = () => {
   return (
@@ -11,3 +13,10 @@ const dashboard = () => {
 };
 
 export default dashboard;
+
+export const getServerSideProps: GetServerSideProps = async ({ req }) => {
+  const session = await getSession({ req });
+  return !session
+    ? { redirect: { destination: "/", permanent: false } }
+    : { props: { session } };
+};
